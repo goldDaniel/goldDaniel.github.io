@@ -1,3 +1,29 @@
+/*COLOR PALLETTE
+	RED: 			#C8372E
+	DARK BEIGE: 	#66584D
+	LIGHT BEIGE: 	#A98F63
+	BROWN: 			#453B39
+	OFF WHITE: 		#CDC9B6 
+*/
+
+* {
+	background-color: #CDC9B6;
+}
+
 .header-name {
 	text-align: center;
+}
+
+body div.tile:hover {
+	background-color: #DF372E;
+    box-shadow: 5px 5px 5px grey;
+}
+
+body div.tile{
+	border-radius: 10px;
+	margin: 0px;
+	color:white;
+	background-color: #C8372E;
+	height: 200px;
+	transition: box-shadow 0.4s, background-color 0.4s;
 }
