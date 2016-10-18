@@ -19,27 +19,44 @@ limitations under the License. */
 	DARK BEIGE: 	#66584D
 	LIGHT BEIGE: 	#A98F63
 	BROWN: 			#453B39
-	OFF WHITE: 		#CDC9B6 
+	OFF WHITE: 		#EEEEEE 
 */
 
 * {
-	background-color: #CDC9B6;
+	background-color: #312e39;
+	color: #EEEEEE;
+	font-size: 32px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.header-name {
-	text-align: center;
-}
-
-body div.tile:hover {
-	background-color: #DF372E;
-    box-shadow: 5px 5px 5px grey;
-}
-
-body div.tile{
-	border-radius: 10px;
-	margin: 0px;
-	color:white;
+.icon {
 	background-color: #C8372E;
-	height: 200px;
-	transition: box-shadow 0.4s, background-color 0.4s;
+	font-size: 98px;
+}
+
+.under-name {
+	font-size: 16px;
+}
+
+.spacing-large {
+	height: 250px;
+}
+
+.spacing-small {
+	height: 100px;
+}
+
+.tile {
+	border-radius: 5%;
+	background-color: #C8372E;
+	width: 95%;
+	padding-bottom: 95%;
+	transition: background-color 0.25s, width 0.25s, padding-bottom 0.25s;
+}
+
+.tile:hover {
+	width: 100%;
+	padding-bottom: 100%;
+	background-color: rgba(200, 55, 46, 0.6);
+	
 }
