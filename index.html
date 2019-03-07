@@ -15,367 +15,216 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Portfolio Page">
+    <meta name="author" content="Daniel Gold">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/main.js"></script>
 
     <title>Daniel Gold</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-
   </head>
 
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" id="pageTopBtn">Daniel Gold</a>
-        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="portfolioBtn" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="aboutBtn" href="#about">About</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" id="resumeBtn" href="#resume">Resume</a>
-            </li>
-          </ul>
-        </div>
+  <body>
+    <div id="threejs"></div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid" >
+        <ul class="nav navbar-nav navbar-right" style="background-color: #f5f5f5;">
+          <li id="portfolioBtn"><a href="#">Portfolio</a></li>
+          <li id="aboutBtn"><a href="#">About</a></li>
+          <li id="contactBtn"><a href="#">Contact</a></li>
+        </ul>
       </div>
     </nav>
-
-    <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
-        <h1 class="text-uppercase mb-0">Daniel Gold</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Computer Science Student - Game Developer</h2>
+    <div class="spacer"></div>
+    <div class="jumbotron jumbotron-fluid" style="background-color: #010101; text-align: center; color: #f5f5f5; margin-bottom: 0">
+      <div class="container-fluid">
+        <img src="img/profile.png" width="15%" height="15%">  
+        <h1>Daniel Gold</h1>
+        <h3>Game Developer & Computer Science Student</h3>
       </div>
-    </header>
-
-    <!-- Portfolio Grid Section -->
-    <section class="portfolio" id="portfolio">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-        <hr class="star-dark mb-5">
+    </div>
+    <div class="spacer"></div>
+    <div id="portfolio" class="container-fluid" style="text-align: center; background-color: #f5f5f5">
+      <h1 style="color: #010101; font-size: 4em">PORTFOLIO</h1>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <hr/>
+          <div class="col-sm-7">
+              <h1 style="padding-bottom: 20px;">Shape Shooter</h1>
+              <a href='https://play.google.com/store/apps/details?id=com.golddaniel.main&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="50%" height="50%" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
+              <h3>
+                Built with Java & <a href="https://libgdx.badlogicgames.com/">libGDX</a> | 
+                <a href="https://github.com/goldDaniel/shape_shooter">Source Code</a>
+              </h3>
+              <h4>Shoot neon shapes with awesome visual effects!</h4>
+          </div>
+          <div class="col-sm-5">
+            <div class="video-wrapper">
+              <iframe width="1280" height="725" src="https://www.youtube.com/embed/rAE-SF2iRFc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <hr/>
+          <div class="col-sm-7">
+            <h1 style="padding-bottom: 20px;">Playstation Vita Pong</h1>
+            <h3>
+              Built with C & <a href="https://github.com/xerpi/libvita2d">libVita2D</a> | 
+              <a href="https://github.com/goldDaniel/vita_pong">Source Code</a>
+            </h3>
+            <h4>Playstation Vita homebrew of the classic game pong!</h4>
+          </div>
+          <div class="col-sm-5">
+            <div class="video-wrapper">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/qiYQqFO9qEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <hr/>
+          <div class="col-sm-7">
+            <h1 style="padding-bottom: 20px;">Bullet Hell Game</h1>
+            <iframe src="https://itch.io/embed/243875" width="75%" height="75%" frameborder="0"></iframe>
+            <h3>
+              Built with Java & <a href="https://libgdx.badlogicgames.com/">libGDX</a> | 
+              <a href="https://github.com/goldDaniel/space_shmup">Source Code</a>
+            </h3>
+            <h4>A boss fight prototype built with libGDX. The boss has multiple phases that have different bullet patterns, and the player can slow down time.</h4>
+          </div>
+          <div class="col-sm-5">
+            <div class="video-wrapper">
+              <iframe width="1280" height="735" src="https://www.youtube.com/embed/8fWaP2S6Mh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div id="about" class="container-fluid" style="text-align: center; background-color: #f5f5f5;">
+      <div class="col-sm-10 col-sm-offset-1" style="padding-top: 1%; padding-bottom: 1%;">
+        <h1 style="color: #010101; font-size: 3em">ABOUT</h1>
+        <div class="col-xs-10 col-xs-offset-1"><hr/></div>
         <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-1x">Shape Shooter</i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/shapeShooter.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-2">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-1x">Bullet Hell</i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/bulletHell.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-3">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                    <i class="fas fa-search-plus fa-1x">Puzzle Platformer</i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/puzzlePlatformer.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-4">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-1x">Vita Pong</i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/vitaPong.png" alt="">
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-5">
-              <div class="portfolio-item-caption d-flex position-absolute h-100 w-100">
-                <div class="portfolio-item-caption-content my-auto w-100 text-center text-white">
-                  <i class="fas fa-search-plus fa-1x">Blast Dem Bots</i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/blastDemBots.png" alt="">
-            </a>
-          </div>
+            <div class="col-xs-8 col-xs-offset-2">
+              <h4 style="line-height: 1.5em; text-align: left;">
+                  Hello! I am currently a student at the University of Manitoba studying Computer Science. I was first introduced to 
+                  software development in high school where I created my first game, and I have never stopped wanting to learn more! 
+                  
+                  <br/><br/>
+                  Currently I am focused on studying Computer Graphics while I create games. I also enjoy playing board games, 
+                  and am a member of the Univeristy of Manitoba Rocket League Esport team!
+              </h4>
+            </div>
         </div>
       </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-white">About</h2>
-        <hr class="star-light mb-5">
+    </div>
+    <div class="spacer"></div>
+    <div id="contact" class="container-fluid" style="text-align: center; background-color: #f5f5f5;">
+      <div class="col-sm-10 col-sm-offset-1" style="padding-top: 1%; padding-bottom: 1%;">
+        <h1 style="color: #010101; font-size: 3em">FIND ME ONLINE</h1>
+        <div class="col-xs-10 col-xs-offset-1"><hr/></div>
         <div class="row">
-          <div class="col-lg-12 ml-auto">
-            <p class="lead">
-              Hello! I am currently a student at the University of Manitoba studying Computer Science. I was first introduced to 
-              software development in high school where I created my first game, and I have never stopped wanting to learn more! 
-              Currrently I am invested in learning about Computer Graphics.
+          <div class="col-sm-offset-3 col-sm-2 col-xs-6">
+            <a href="https://github.com/goldDaniel" target="blank">
+              <i class="fa fa-github fa-5x"></i>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-6">
+            <a href="https://www.linkedin.com/in/daniel-gold-3a9384a4/" target="blank">
+              <i class="fa fa-linkedin fa-5x"></i>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-6">
+            <a href="mailto:contact@golddaniel.ca" target="blank">
+              <i class="fa fa-envelope fa-5x"></i>
+            </a>
           </div>
         </div>
-
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="resume">
-      <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">My resume</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="text-center mt-4">
-              <a class="btn btn-xl btn-outline-dark" href="ResumeJan2018.pdf">
-                <i class="fas fa-download mr-2"></i>
-                View Here!
-              </a>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h4 class="text-uppercase mb-4">Find me online!</h4>
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.linkedin.com/in/daniel-gold-3a9384a4/">
-                  <i class="fab fa-fw fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://github.com/goldDaniel">
-                  <i class="fab fa-fw fa-github"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="https://www.youtube.com/user/vangradomor">
-                  <i class="fab fa-fw fa-youtube-square"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Portfolio Modals -->
-
-    <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-1">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Shape Shooter</h2>
-              <iframe width="100%" height="75%" src="https://www.youtube.com/embed/vsYZ-F7WNAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p class="mb-5">
-                <a href="https://github.com/goldDaniel/shape_shooter">Source Code Here</a>
-                <br/>
-                <a href="https://github.com/goldDaniel/shape_shooter"></a>
-                <br/>
-                Written in Java using the <a href="https://libgdx.badlogicgames.com/">LibGDX Framework</a>
-                <br/>
-                For this project I implemented a spring-mass system for the warping background effect.  I have also interpolate half of the springs, giving a similar effect to a 
-                full simulation while drastically reducing CPU usage.
-                <br/>
-                <br/>
-                I also integrated a 3rd-part bloom post-processing library that I had to modify to get working with my project. In the future I would like to write the bloom effect myself
-                <br/>
-                <br/>
-                One last part that I would like to mention is that the small enemies are an implementation of boids, an algorithm with emergent movement patterns.
-                While this was not hard to implement, it was fun to tune and put into the game!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div>  
     </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-2">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Bullet Hell</h2>
-              <iframe width="100%" height="75%" src="https://www.youtube.com/embed/rAE-SF2iRFc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              <p class="mb-5">
-                <a href="https://github.com/goldDaniel/space_shmup">Source</a>
-                <br/>
-                Written in Java using the <a href="https://libgdx.badlogicgames.com/">LibGDX Framework</a>
-                <br/>
-                <br/>
-                During this project I learned how to manage many on screen objects, and had to use pooling to avoid memory allocation caused framedrops.
-                The system I developed to fire bullets in this game was extended into the shape-shooter particle system.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-3">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Puzzle Platformer</h2>
-              <img class="img-fluid mb-5" src="img/portfolio/puzzlePlatformer.png" alt="">
-              
-              <p class="mb-5">
-                <a href="https://github.com/goldDaniel/platformer_project">Source</a>
-                <br/>
-                Written in Java using the <a href="https://libgdx.badlogicgames.com/">LibGDX Framework</a>
-                <br/>
-                <br/>
-                The key features of this project is a 2d camera that can interpolate based off various points on the map, and the use of colored keys to open doors.
-                <br/>
-                There is also a debug view that lets you see triggers around the map, outlines of bounding boxes, position data, and collision data.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-4">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">PS-Vita Pong</h2>
-              <iframe width="100%" height="75%" src="https://www.youtube.com/embed/qiYQqFO9qEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              
-              <p class="mb-5">
-                <a href="https://github.com/goldDaniel/vita_pong">Source</a>
-                <br/>
-                Written in C using the libVita2D library
-                <br/>
-                <br/>
-                This project was written because I wanted to see what console development would involve. 
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-5">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Blast Dem Bots</h2>
-              <iframe width="100%" height="75%" src="https://www.youtube.com/embed/VTANByLZJGw?ecver=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              
-              <p class="mb-5">
-                <a href="https://github.com/goldDaniel/BLAST_DEM_BOTS">Source</a>
-                <br/>
-                Written in Java using the <a href="https://libgdx.badlogicgames.com/">LibGDX Framework</a>
-                <br/>
-                <br/>
-                A top down shooter written as my first experiment with tilemaps. This game features bots that will follow you around the map, with their
-                paths being given from the A* pathfinding algorithm. This was also my first time working with 2d cameras dealing with worlds larger than the screen.
-              </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal mfp-hide" id="portfolio-modal-6">
-      <div class="portfolio-modal-dialog bg-white">
-        <a class="close-button d-none d-md-block portfolio-modal-dismiss" href="#">
-          <i class="fa fa-3x fa-times"></i>
-        </a>
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
-              <hr class="star-dark mb-5">
-              <img class="img-fluid mb-5" src="img/portfolio/submarine.png" alt="">
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-              <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
-                <i class="fa fa-close"></i>
-                Close Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/freelancer.js"></script>
-
+    <div class="spacer"></div>
   </body>
-
+  <footer>
+      <script>
+          var scene = new THREE.Scene();
+          var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+    
+          var renderer = new THREE.WebGLRenderer();
+          renderer.setSize( window.innerWidth, window.innerHeight );
+          document.getElementById("threejs").appendChild( renderer.domElement );
+    
+          var cubes = [];
+  
+          for(var x = 0; x < 30; x++)
+          {
+            for(var y = 0; y < 30; y++)
+            {
+              var geometry = new THREE.BoxGeometry( 0.25, 0.25, 0.25 );
+  
+              var color = 0xffffff / 2 * x/10 + 0xffffff / 2 * y/10;
+  
+              var material = new THREE.MeshStandardMaterial( { color: color } );
+              var cube = new THREE.Mesh( geometry, material );
+  
+              cube.position.x = -8 + (x/30.0) * 20;
+              cube.position.y = -5 + (y/30.0) * 20;
+  
+              cubes.push(cube);
+  
+              scene.add( cube );
+            }
+          }
+          
+    
+          var ambient = new THREE.AmbientLight( 0x6e6e6e ); 
+          scene.add( ambient );
+  
+          var point = new THREE.PointLight( 0xeeeeee );
+          point.position.x = 0;
+          point.position.y = 1;
+          point.position.z = 1;
+          scene.add( point );
+  
+          camera.position.z = 5;
+  
+          camera.lookAt.x = 0;
+          camera.lookAt.y = 0;
+          camera.lookAt.z = 0;
+  
+          var animate = function () {
+            requestAnimationFrame( animate );
+    
+            for(var i = 0; i < cubes.length; i++)
+            {
+                cubes[i].rotation.x += 0.0125;
+                cubes[i].rotation.y += 0.0125;
+            }
+    
+            renderer.render( scene, camera );
+          };
+    
+          animate();
+      </script>
+  </footer>
 </html>

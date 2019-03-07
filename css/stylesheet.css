@@ -1,0 +1,49 @@
+body
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr 
+{
+    border: none;
+    height: 2px;
+    color: #333; 
+    background-color: #333; 
+}
+
+.video-wrapper 
+{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.spacer
+{
+    height: 15em;
+    opacity: 0;
+}
+
+#threejs
+{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+#contact
+{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
