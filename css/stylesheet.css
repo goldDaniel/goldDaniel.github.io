@@ -11,6 +11,46 @@ hr
     background-color: #333; 
 }
 
+.container-fluid
+{
+    text-align: center; 
+    background-color: #f5f5f5;
+}
+
+.container-fluid h1
+{
+    color: #131313; 
+    font-size: 3em;
+}
+
+.jumbotron .container-fluid
+{
+    background-color: #010101; 
+}
+
+.navbar
+{
+    text-align: center;
+}
+
+.nav
+{
+    background-color: #f5f5f5;
+}
+
+.jumbotron
+{
+    background-color: #010101; 
+    text-align: center; 
+    color: #f5f5f5; 
+    margin-bottom: 0; 
+}
+
+.jumbotron h1
+{
+    color: #f5f5f5;
+}
+
 .video-wrapper 
 {
     position: relative;
@@ -47,4 +87,17 @@ hr
     padding-top: 5%;
     padding-bottom: 5%;
 }
+
+.container-fluid .col-sm-10
+{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#about h4
+{
+    line-height:  1.5em;
+    text-align: left;
+}
+
 
