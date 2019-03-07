@@ -166,9 +166,9 @@
     
           var cubes = [];
   
-          for(var x = 0; x < 30; x++)
+          for(var x = 0; x < 25; x++)
           {
-            for(var y = 0; y < 30; y++)
+            for(var y = 0; y < 12; y++)
             {
               var geometry = new THREE.BoxGeometry(0.25, 0.25, 0.25);
   
@@ -178,7 +178,7 @@
               var cube = new THREE.Mesh( geometry, material );
   
               cube.position.x = -8 + (x/30.0) * 20;
-              cube.position.y = -5 + (y/30.0) * 20;
+              cube.position.y = -3 + (y/30.0) * 20;
   
               cubes.push(cube);
   
