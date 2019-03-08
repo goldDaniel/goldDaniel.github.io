@@ -46,7 +46,7 @@
     <div class="spacer"></div>
     <div class="jumbotron jumbotron-fluid">
       <div class="container-fluid">
-        <img src="img/profile.png" width="15%" height="15%">  
+        <img src="img/profile.png" width="12.5%" height="12.5%">  
         <h1>Daniel Gold</h1>
         <h3>Game Developer & Computer Science Student</h3>
       </div>
@@ -123,7 +123,7 @@
                   software development in high school where I created my first game, and I have never stopped wanting to learn more! 
                   <br/><br/>
                   Currently I am focused on studying Computer Graphics while I create games. I also enjoy playing board games, 
-                  and am a member of the Univeristy of Manitoba Rocket League Esport team!
+                  and am a member of the University of Manitoba Rocket League Esports team!
               </h4>
             </div>
         </div>
@@ -156,75 +156,7 @@
     <div class="spacer"></div>
   </body>
   <footer>
-      <script>
-          var scene = new THREE.Scene();
-          var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-    
-          var renderer = new THREE.WebGLRenderer();
-          renderer.setSize( window.innerWidth, window.innerHeight );
-          document.getElementById("threejs").appendChild( renderer.domElement );
-    
-          var cubes = [];
-  
-          for(var x = 0; x < 25; x++)
-          {
-            for(var y = 0; y < 12; y++)
-            {
-              var geometry = new THREE.BoxGeometry(0.25, 0.25, 0.25);
-  
-              var color = 0xffffff / 2 * x/10 + 0xffffff / 2 * y/10;
-  
-              var material = new THREE.MeshStandardMaterial( { color: color } );
-              var cube = new THREE.Mesh( geometry, material );
-  
-              cube.position.x = -8 + (x/30.0) * 20;
-              cube.position.y = -3 + (y/30.0) * 20;
-  
-              cubes.push(cube);
-  
-              scene.add( cube );
-            }
-          }
-          
-    
-          var ambient = new THREE.AmbientLight( 0x6e6e6e ); 
-          scene.add( ambient );
-  
-          var point = new THREE.PointLight( 0xeeeeee );
-          point.position.x = 0;
-          point.position.y = 1;
-          point.position.z = 1;
-          scene.add( point );
-  
-          camera.position.z = 5;
-  
-          camera.lookAt.x = 0;
-          camera.lookAt.y = 0;
-          camera.lookAt.z = 0;
-  
-          var animate = function () {
-            requestAnimationFrame( animate );
-    
-            for(var i = 0; i < cubes.length; i++)
-            {
-                cubes[i].rotation.x += 0.0125;
-                cubes[i].rotation.y += 0.0125;
-            }
-    
-            renderer.render( scene, camera );
-          };
-
-          window.addEventListener( 'resize', onWindowResize, false );
-
-          function onWindowResize(){
-
-              camera.aspect = window.innerWidth / window.innerHeight;
-              camera.updateProjectionMatrix();
-
-              renderer.setSize( window.innerWidth, window.innerHeight );
-          }
-    
-          animate();
-      </script>
+      <!--load the background last-->
+      <script src="js/backgroundScene.js"></script>
   </footer>
 </html>

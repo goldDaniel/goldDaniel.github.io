@@ -11,6 +11,11 @@ hr
     background-color: #333; 
 }
 
+li a
+{
+    color: #f5f5f5;
+}
+
 .container-fluid
 {
     text-align: center; 
@@ -23,33 +28,34 @@ hr
     font-size: 3em;
 }
 
+.container-fluid .col-sm-10
+{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.jumbotron
+{
+    background-color: #050505; 
+    text-align: center; 
+    color: #f5f5f5; 
+    margin-bottom: 0; 
+}
+
 .jumbotron .container-fluid
 {
-    background-color: #010101; 
+    background-color: #050505; 
+}
+
+.jumbotron h1
+{
+    color: #f5f5f5;
 }
 
 .navbar .container-fluid
 {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.65);
-}
-
-li a
-{
-    color: #ffffff;
-}
-
-.jumbotron
-{
-    background-color: #010101; 
-    text-align: center; 
-    color: #f5f5f5; 
-    margin-bottom: 0; 
-}
-
-.jumbotron h1
-{
-    color: #f5f5f5;
 }
 
 .video-wrapper 
@@ -87,12 +93,6 @@ li a
 {
     padding-top: 5%;
     padding-bottom: 5%;
-}
-
-.container-fluid .col-sm-10
-{
-    padding-top: 2%;
-    padding-bottom: 2%;
 }
 
 #about h4
