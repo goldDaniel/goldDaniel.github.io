@@ -7,10 +7,8 @@ document.getElementById("threejs").appendChild( renderer.domElement );
 
 var cubes = [];
 
-for(var x = 0; x < 14; x++)
-{
-    for(var y = 0; y < 10; y++)
-    {
+for(var x = 0; x < 14; x++) {
+    for(var y = 0; y < 10; y++) {
         var geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
 
         var color = 0xffffff / 2 * x/10 + 0xffffff / 2 * y/10;
@@ -45,12 +43,10 @@ camera.lookAt.z = 0;
 var animate = function () {
     requestAnimationFrame( animate );
 
-    for(var i = 0; i < cubes.length; i++)
-    {
+    for(var i = 0; i < cubes.length; i++) {
         cubes[i].rotation.x += 0.015;
         cubes[i].rotation.y += 0.015;
     }
-
     renderer.render( scene, camera );
 };
 
