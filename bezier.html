@@ -1,0 +1,24 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bezier Fun!</title>
+    <script>
+    $( function() {
+        $( "#slider" ).slider();
+    } );
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"></script>
+    
+</head>
+<body>
+    <div class="slidecontainer">
+        Number of Segments: <span id="segmentsOutput"></span>
+        <input type="range" min="2" max="25" value="5" class="slider" id="numLineSegments">
+    </div>
+    <div id="bezier"></div>
+</body>
+<footer>
+    
+    <script src="js/bezier.js"></script>
+</footer>
