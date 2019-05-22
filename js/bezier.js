@@ -42,7 +42,7 @@ camera.lookAt.y = 0;
 camera.lookAt.z = 0;
 
 var curveMaterial = new THREE.LineBasicMaterial( { color: 0xffffff } );
-var controlMaterial = new THREE.LineBasicMaterial( { color: 0x0000ff, } );
+var controlMaterial = new THREE.LineBasicMaterial( { color: 0xff0000, } );
 var dotMaterial = new THREE.PointsMaterial( { size: 8, sizeAttenuation: false } );
 
 var controlPoints = [];
