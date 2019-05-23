@@ -11,13 +11,15 @@ slider.oninput = function() {
 function getBezierPointAtTime(controlPoints, t) {
     var result;
 
+    //if we are at the last interpolation, return our point on the curve
     if(controlPoints.length == 2) {
         result = new THREE.Vector3().lerpVectors(controlPoints[0], controlPoints[1], t);
     }
     else {
         var nextControlPoints = [];
         for(var i = 0; i < controlPoints.length - 1; i++) {
-            nextControlPoints.push(new THREE.Vector3().lerpVectors(controlPoints[i], controlPoints[i + 1], t));
+            var point = new THREE.Vector3().lerpVectors(controlPoints[i], controlPoints[i + 1], t);
+            nextControlPoints.push(point);
         }
         result = getBezierPointAtTime(nextControlPoints, t);
     }
@@ -46,11 +48,11 @@ var controlMaterial = new THREE.LineBasicMaterial( { color: 0xff0000, } );
 var dotMaterial = new THREE.PointsMaterial( { size: 8, sizeAttenuation: false } );
 
 var controlPoints = [];
-controlPoints.push(new THREE.Vector3(-25, 0, 0));
-controlPoints.push(new THREE.Vector3(-25, 10, 0));
-controlPoints.push(new THREE.Vector3(-25, -10, 0));
-controlPoints.push(new THREE.Vector3(25, -10, 0));
-controlPoints.push(new THREE.Vector3(25, 0, 0));
+controlPoints.push(new THREE.Vector3());
+controlPoints.push(new THREE.Vector3());
+controlPoints.push(new THREE.Vector3());
+controlPoints.push(new THREE.Vector3());
+controlPoints.push(new THREE.Vector3());
 
 
 var angle = 0;
@@ -64,17 +66,17 @@ var animate = function () {
 
     angle += 0.005;
 
-    controlPoints[0].x = -15 + Math.sin(angle) * 10;
-    controlPoints[0].y = Math.cos(angle) * 2.5;
+    controlPoints[0].x =  Math.sin(angle) * 15;
+    controlPoints[0].y =  Math.cos(angle*2) * 5;
 
     controlPoints[1].x = -20 + Math.sin(angle) * 5;
-    controlPoints[1].y = 10;
+    controlPoints[1].y =    Math.cos(angle*3) * 6;
 
     controlPoints[2].x =  Math.sin(angle*2) * 5;
-    controlPoints[2].y =  Math.cos(angle*2) * 5;
+    controlPoints[2].y =  Math.cos(angle*4) * 5;
     
     controlPoints[3].x = 10;
-    controlPoints[3].y = Math.cos(angle) * 10;
+    controlPoints[3].y = Math.cos(angle*1.14) * 10;
     
     controlPoints[4].x = 15 + Math.cos(angle*3) * 10;
     controlPoints[4].y = Math.sin(angle*2) * 10;
