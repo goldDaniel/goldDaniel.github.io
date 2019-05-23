@@ -12,6 +12,7 @@ function getBezierPointAtTime(controlPoints, t) {
     var result;
 
     //if we are at the last interpolation, return our point on the curve
+    //otherwise we get the next set of interpolated points and recursively call
     if(controlPoints.length == 2) {
         result = new THREE.Vector3().lerpVectors(controlPoints[0], controlPoints[1], t);
     }
@@ -66,6 +67,7 @@ var animate = function () {
 
     angle += 0.005;
 
+    //we do this to animate the curve/////////////
     controlPoints[0].x =  Math.sin(angle) * 15;
     controlPoints[0].y =  Math.cos(angle*2) * 5;
 
@@ -80,17 +82,18 @@ var animate = function () {
     
     controlPoints[4].x = 15 + Math.cos(angle*3) * 10;
     controlPoints[4].y = Math.sin(angle*2) * 10;
+    ///////////////////////////////////////////////
 
+    //add dots for control points to scene
     for(var i = 0; i < controlPoints.length; i++) {
 
         var geometry = new THREE.Geometry();
         geometry.vertices.push(controlPoints[i])
         var dot = new THREE.Points(geometry, dotMaterial);
         scene.add(dot);
-
-
     }
 
+    //draw lines connecting control points
     for(var i = 0; i < controlPoints.length - 1; i++) {
 
         var geometry = new THREE.Geometry();
@@ -102,9 +105,12 @@ var animate = function () {
     }
 
 
+    //the shape to hold our curve
     var bezierCurve = new THREE.Geometry();
+    //number of line segments to build the curve with
     var resolution = numLineSegments;
 
+    //add initial point before interpolating with other points
     bezierCurve.vertices.push(controlPoints[0]);
     for(var i = 0; i < resolution; i++) {
         var vertex = getBezierPointAtTime(controlPoints, (i+1)/resolution);
@@ -112,6 +118,7 @@ var animate = function () {
         bezierCurve.vertices.push(vertex);
     }
 
+    //create line from geometry and add to scene
     var line = new THREE.Line(bezierCurve, curveMaterial);
     scene.add(line);
 
@@ -120,7 +127,7 @@ var animate = function () {
 };
 
 
-window.addEventListener( 'mousemove', onMouseMove, false );
+
 window.addEventListener( 'resize', onWindowResize, false );
 function onWindowResize(){
 
@@ -129,6 +136,7 @@ function onWindowResize(){
 
     renderer.setSize( window.innerWidth, window.innerHeight );
 }
+window.addEventListener( 'mousemove', onMouseMove, false );
 function onMouseMove( event ) {
 
 	// calculate mouse position in normalized device coordinates
