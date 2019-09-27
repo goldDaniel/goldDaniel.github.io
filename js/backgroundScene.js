@@ -11,6 +11,7 @@ for(var x = 0; x < 14; x++) {
     for(var y = 0; y < 10; y++) {
         var geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
 
+        //these colors just looked cool
         var color = 0xffffff / 2 * x/10 + 0xffffff / 2 * y/10;
 
         var material = new THREE.MeshStandardMaterial( { color: color } );
