@@ -58,6 +58,11 @@ li a
     background-color: rgba(0, 0, 0, 0.65);
 }
 
+#portfolio
+{
+    padding-bottom: 5px;
+}
+
 .navbar .container-fluid
 {
     text-align: center;
