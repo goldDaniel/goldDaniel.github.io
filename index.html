@@ -1,207 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Portfolio">
+        <meta name="author" content="Daniel Gold">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Portfolio Page">
-    <meta name="author" content="Daniel Gold">
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+        <title>Daniel Gold - Developer</title>
+    </head>
 
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <script src="js/main.js"></script>
-
-    <title>Daniel Gold</title>
-  </head>
-
-  <body>
-    <div id="threejs"></div>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="col-sm-offset-4 col-sm-6">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a id="portfolioBtn" href="#">Portfolio</a></li>
-            <li><a id="aboutBtn" href="#">About</a></li>
-          </ul>
-      </div>
-      </div>
-    </nav>
-    <div class="spacer"></div>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container-fluid">
-        <img src="img/profile.png" width="12.5%" height="12.5%">  
-        <h1>Daniel Gold</h1>
-        <h3>Game Developer & Computer Science Student</h3>
-        <div class="row">
-          <div class="col-sm-offset-2 col-sm-2 col-xs-6">
-            <a href="https://github.com/goldDaniel" target="blank">
-              <i class="fa fa-github fa-5x"></i>
-            </a>
-          </div>
-          <div class="col-sm-2 col-xs-6">
-            <a href="https://www.youtube.com/user/vangradomor/videos" target="blank">
-              <i class="fa fa-youtube fa-5x"></i>
-            </a>
-          </div>
-          <div class="col-sm-2 col-xs-6">
-            <a href="https://www.linkedin.com/in/daniel-gold-3a9384a4/" target="blank">
-              <i class="fa fa-linkedin fa-5x"></i>
-            </a>
-          </div>
-          <div class="col-sm-2 col-xs-6">
-            <a href="mailto:contact@golddaniel.ca">
-              <i class="fa fa-envelope fa-5x"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="spacer"></div>
-    <div id="portfolio" class="container-fluid" >
-      <h1>PORTFOLIO</h1>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-          <hr/>
-          <div class="col-sm-7">
-              <h1 >Shape Shooter</h1>
-              <a href='https://play.google.com/store/apps/details?id=com.golddaniel.main&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="50%" height="50%" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-              <h3>
-                Built with Java & <a href="https://libgdx.badlogicgames.com/">libGDX</a> | 
-                <a href="https://github.com/goldDaniel/shape_shooter">Source Code</a>
-              </h3>
-              <h4>
-                An arcade shooter designed for cross-platform release on Android and desktop.
-              </h4>
-          </div>
-          <div class="col-sm-5">
-            <div class="video-wrapper">
-              <iframe width="1280" height="720" src="https://www.youtube.com/embed/vt23mGNqqfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
+    <body>
+        <div class="personal-info">
+            <img class="profile-image" src="img/profile.jpg"></img>
+            <div class="titles">
+                <h1>Daniel Gold</h1>
+                <h2>Software Developer</h2>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-          <hr/>
-          <div class="col-sm-7">
-            <h1>3D Game Engine</h1>
-            <h3>
-              Built with C++, <a href="https://www.libsdl.org/">SDL</a>, <a href="https://www.opengl.org/">OpenGL</a> & <a href="https://pybullet.org/wordpress/">Bullet</a>
-              <br/>
-              <a href="https://github.com/goldDaniel/Procedural-Infinite-Grass">Source Code</a>
-            </h3>
-            <h4>
-              This project is being developed to learn about several aspects of game engine development.
-              The end goal is to have a ball rolling through a large field of grass that will interact on touch.
-            </h4>
-          </div>
-          <div class="col-sm-5">
-            <div class="video-wrapper">
-              <iframe width="1280" height="720" src="https://www.youtube.com/embed/UdUTqUeh1uo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-          <hr/>
-          <div class="col-sm-7">
-            <h1>Game Development Workshop</h1>
-            <h3>
-              Built with <a href="https://www.processing.org/">Processing</a>
-              |
-              <a href="https://github.com/goldDaniel/Game-Devlopment-Workshop">Source Code</a>
-            </h3>
-            <h4>
-              A workshop to introduce students to game development
-            </h4>
-          </div>
-          <div class="col-sm-5">
-            <div class="video-wrapper">
-              <iframe width="1280" height="720" src="https://www.youtube.com/embed/-u4utq9QTXg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-          <hr/>
-          <div class="col-sm-7">
-            <h1 >Playstation Vita Pong</h1>
-            <h3>
-              Built with C & <a href="https://github.com/xerpi/libvita2d">libVita2D</a> | 
-              <a href="https://github.com/goldDaniel/vita_pong">Source Code</a>
-            </h3>
-            <h4>
-              Playstation Vita homebrew of the classic game pong! Developed to learn about console hardware.
-            </h4>
-          </div>
-          <div class="col-sm-5">
-            <div class="video-wrapper">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/qiYQqFO9qEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-          <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-            <hr/>
-            <div class="col-sm-7">
-              <h1 >Bullet Hell Game</h1>
-              <a href='https://play.google.com/store/apps/details?id=com.barycentric.shmup&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img width="50%" height="50%" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-              <h3>
-                Built with Java & <a href="https://libgdx.badlogicgames.com/">libGDX</a> | 
-                <a href="https://github.com/goldDaniel/space_shmup">Source Code</a>
-              </h3>
-              <h4>A boss fight prototype built with libGDX. The boss has multiple phases that have different bullet patterns, and the player can slow down time.</h4>
-            </div>
-            <div class="col-sm-5">
-              <div class="video-wrapper">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/8fWaP2S6Mh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video"></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-    
-      
-    </div>
-    <div class="spacer"></div>
-    <div id="about" class="container-fluid">
-      <div class="col-sm-10 col-sm-offset-1">
-        <h1>ABOUT</h1>
-        <div class="col-xs-10 col-xs-offset-1"><hr/></div>
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-              <h4>
-                  Hello! I am currently a student at the University of Manitoba studying Computer Science. I was first introduced to 
-                  software development in high school where I created my first game, and I have never stopped wanting to learn more! 
-                  <br/><br/>
-                  Currently I am focused on learning Game Engine development, with my latest project being for the Nintendo Wii.
-              </h4>
+            <div class="online-presence">
+                <a href="https://github.com/goldDaniel" class="fa fa-github fa-2x"></a>
+                <a href="https://www.linkedin.com/in/daniel-gold-3a9384a4/" class="fa fa-linkedin fa-2x"></a>
+                <a href="https://www.youtube.com/user/vangradomor/videos" class="fa fa-youtube fa-2x"></a>
             </div>
         </div>
-      </div>
-    </div>
-    <div class="spacer"></div>
-  </body>
-  <footer>
-      <!--load the background last-->
-      <script src="js/backgroundScene.js"></script>
-  </footer>
+        <div class="projects-info">
+            <h2>A few of my projects</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3><a href="https://github.com/goldDaniel/shape_shooter">Shape Shooter</a></h3>
+                    <video width="100%" controls>
+                        <source src="https://i.imgur.com/BQ8AiF4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-card">
+                    <h3><a href="https://github.com/goldDaniel/Procedural-Grass">Procedural Grass</a></h3>
+                    <video width="100%" controls>
+                        <source src="https://i.imgur.com/u31GkFW.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-card">
+                    <h3>Shmup Game Engine</h3>
+                    <video width="100%" controls>
+                        <source src="https://i.imgur.com/RHH5CWR.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-card">
+                    <h3>Gamedev Workshops</h3>
+                    <iframe class="embeded-video" src="https://www.youtube.com/embed/-u4utq9QTXg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="project-card">
+                    <h3><a href="https://github.com/goldDaniel/BerkleeJamTeam20">Hoppin Shoppin</a></h3>
+                    <iframe frameborder="0" src="https://itch.io/embed/815126" width="100%" height="auto"><a href="https://golddaniel.itch.io/hoppin-shoppin">Hoppin Shoppin by gold.daniel</a></iframe>
+                </div>
+                <div class="project-card">
+                    <h3><a href="https://github.com/goldDaniel/vita_pong">Playstation Vita Pong</a></h3>
+                    <iframe class="embeded-video" src="https://www.youtube.com/embed/qiYQqFO9qEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+          
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        &copy; 2021 - Daniel Gold
+    </footer>
 </html>
