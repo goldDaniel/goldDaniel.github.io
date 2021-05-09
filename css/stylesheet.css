@@ -93,7 +93,7 @@ h3 a:hover {
 
 .project-cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
 }
