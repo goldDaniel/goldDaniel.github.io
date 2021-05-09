@@ -132,8 +132,6 @@ in float v_life_max;
 
 out vec4 o_frag_color;
 
-float abs(float a) { return a < 0.0 ? -a : a; }
-
 //http://iquilezles.org/www/articles/palettes/palettes.htm
 vec3 palette( in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d )
 {  return a + b*cos( 6.28318*(c*t+d) ); }
