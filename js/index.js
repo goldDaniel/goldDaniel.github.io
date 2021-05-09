@@ -3,9 +3,6 @@ var particleUpdateVertex =
 #version 300 es
 precision mediump float;
 
-//only 2 channels
-uniform sampler2D u_R_G_noise;
-
 uniform float u_dt;
 uniform float u_elapsed;
 
@@ -62,23 +59,25 @@ float random( float x ) { return floatConstruct(hash(floatBitsToUint(x))); }
 
 void main() 
 {
+    float randX = random(u_elapsed + float(gl_VertexID));
+    float randY = random(float(gl_VertexID) + u_elapsed * 1.61803398875 * 1.61803398875);
+    float randZ = random(float(gl_VertexID) + u_elapsed * 1.61803398875 * 3.1415926);
+    float randW = random(float(gl_VertexID) + u_elapsed * 1.61803398875);
+
     //spawn particle
     if (i_life_current >= i_life_max) 
     {   
-        float randX = random(u_elapsed + float(gl_VertexID));
-        float randY = random(float(gl_VertexID) + u_elapsed * 1.61803398875);
-
         float angle = u_min_angle + randX * (u_max_angle - u_min_angle);
         float x = cos(angle);
         float y = sin(angle);
         
-        v_position = u_origin;
+        v_position.x = randY * 2.0 - 1.0;
+        v_position.y = randW * 2.0 - 1.0;
     
         v_life_current = 0.0;
         v_life_max = i_life_max;
     
-        
-        v_velocity = vec2(x,y) * (u_min_speed + randY * (u_max_speed - u_min_speed));
+        v_velocity = vec2(x, y) * (u_min_speed + randW * (u_max_speed - u_min_speed));
     } 
     else 
     {
@@ -86,28 +85,6 @@ void main()
         v_life_max = i_life_max;
         v_position = i_position + i_velocity * u_dt;
         v_velocity = i_velocity + u_force * u_dt;
-
-        if(v_position.x < -1.0) 
-        {
-            v_position.x = -1.0;
-            v_velocity.x = -v_velocity.x;
-        } 
-        else if(v_position.x > 1.0) 
-        {
-            v_position.x = 1.0;
-            v_velocity.x = -v_velocity.x;
-        } 
-
-        if(v_position.y < -1.0) 
-        {
-            v_position.y = -1.0;
-            v_velocity.y = -v_velocity.y;
-        } 
-        else if(v_position.y > 1.0) 
-        {
-            v_position.y = 1.0;
-            v_velocity.y = -v_velocity.y;
-        } 
     }
 }
 `;
@@ -127,13 +104,14 @@ in vec2 i_velocity;
 in float i_life_current;
 in float i_life_max;
 
-
+out vec2 v_position;
 out vec2 v_velocity;
 out float v_life_current;
 out float v_life_max;
 
 void main() 
 {    
+    v_position = i_position;
     v_velocity = i_velocity;
     v_life_current = i_life_current;
     v_life_max = i_life_max;
@@ -147,6 +125,7 @@ var particleRenderFragment =
 `#version 300 es
 precision mediump float;
 
+in vec2 v_position;
 in vec2 v_velocity;
 in float v_life_current;
 in float v_life_max;
@@ -155,38 +134,52 @@ out vec4 o_frag_color;
 
 float abs(float a) { return a < 0.0 ? -a : a; }
 
+//http://iquilezles.org/www/articles/palettes/palettes.htm
+vec3 palette( in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d )
+{  return a + b*cos( 6.28318*(c*t+d) ); }
+
 void main() 
 {
     float t = v_life_current / v_life_max;
 
-    o_frag_color = vec4(t, abs(v_velocity.x), abs(v_velocity.y), 1.0 - t);
+    o_frag_color = vec4(palette(t, 
+                                vec3(0.5,0.5,0.5),
+                                vec3(0.5,0.5,0.5),
+                                vec3(1.0,1.0,1.0),
+                                vec3(0.0,0.33,0.67)), 
+                        1.0 - t);
 }
 `;
+
+
 
 function main() 
 {    
     var canvas_element = document.getElementById("background-canvas");
     canvas_element.width = window.innerWidth;
     canvas_element.height = window.innerHeight;
+
+    
+
     var webgl_context = canvas_element.getContext("webgl2");
     if (webgl_context != null) 
     {
         var state =
             init(
             webgl_context,
-            10000, //particle count
-            5, //birth rate
-            0.5, 4.0, //lifespan
+            2000, //particle count
+            0.2, //birth rate
+            5.4, 10.6, //lifespan
             -Math.PI, Math.PI, ///angle
             0.1, 0.4, //speed
-            [0.0, 0.0]); //gravity
+            [0.0, 0.4]); //force
     
         //particles follow mouse
         canvas_element.onmousemove = function(e) 
         {
             var x = 2.0 * (e.pageX - this.offsetLeft)/this.width - 1.0; 
             var y = -(2.0 * (e.pageY - this.offsetTop)/this.height - 1.0);
-            state.origin = [0,0];
+            state.origin = [x,y];
         };
         window.requestAnimationFrame(
             function(ts) 
@@ -222,8 +215,11 @@ function render(gl, state, timestamp_millis)
     }
     state.old_timestamp = timestamp_millis;
 
-    state.origin[0] = Math.cos(state.total_time / 800) * 0.8;
+    state.origin[0] = Math.cos(state.total_time / 800) * 0.6;
     state.origin[1] = Math.sin(state.total_time / 800) * 0.8;
+
+    state.gravity[0] = Math.sin(state.total_time / 400) * 0.4;
+    state.gravity[1] = Math.cos(state.total_time / 400) * 0.4;
 
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     gl.useProgram(state.particle_update_program);
@@ -254,11 +250,7 @@ function render(gl, state, timestamp_millis)
         gl.getUniformLocation(state.particle_update_program, "u_max_speed"),
         state.max_speed);
     state.total_time += time_delta;
-    gl.activeTexture(gl.TEXTURE0);
-    gl.bindTexture(gl.TEXTURE_2D, state.rg_noise);
-    gl.uniform1i(
-        gl.getUniformLocation(state.particle_update_program, "u_R_G_noise"),
-        0);
+   
 
     //bind read buffer
     gl.bindVertexArray(state.particle_sys_vaos[state.read]);
@@ -466,21 +458,9 @@ function init(
 
     gl.clearColor(0.12, 0.12, 0.12, 1.0);
 
-    //noise tex
-    var rg_noise_texture = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, rg_noise_texture);
-    gl.texImage2D(gl.TEXTURE_2D,
-                    0, 
-                    gl.RG8,
-                    2048, 2048,
-                    0,
-                    gl.RG,
-                    gl.UNSIGNED_BYTE,
-                    randomRGData(2048, 2048));
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.MIRRORED_REPEAT);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.MIRRORED_REPEAT);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+
+
+    
 
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -494,7 +474,6 @@ function init(
         particle_render_program: render_program,
         num_particles: initial_data.length / 6,
         old_timestamp: 0.0,
-        rg_noise: rg_noise_texture,
         total_time: 0.0,
         born_particles: 0,
         birth_rate: particle_birth_rate,
@@ -559,17 +538,6 @@ function createGLProgram(gl, shader_sources, transform_feedback_varyings)
     }
 
     return program;
-  }
-
-function randomRGData(size_x, size_y) 
-{
-    var d = [];
-    for (var i = 0; i < size_x * size_y; i++) 
-    {
-        d.push(Math.random() * 255.0);
-        d.push(Math.random() * 255.0);
-    }
-    return new Uint8Array(d);
 }
   
 //interleaved data
@@ -615,7 +583,7 @@ function setupParticleBufferVAO(gl, buffers, vao)
                                     false, 
                                     buffer.stride,
                                     offset);
-                /* we're only dealing with types of 4 byte size in this demo, unhardcode if necessary */
+                //we're only dealing with types of 4 byte size
                 var type_size = 4;
                 offset += attrib_desc.num_components * type_size;
 
@@ -630,3 +598,6 @@ function setupParticleBufferVAO(gl, buffers, vao)
     gl.bindVertexArray(null);
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
 }
+
+//leaks a ton of memory but whos gonna be resizing the window? 
+window.onresize = main
