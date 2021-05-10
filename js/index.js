@@ -142,12 +142,14 @@ void main()
 {
     float t = v_life_current / v_life_max;
 
+    float alpha_final = t < 0.5 ? (t / 0.5) : (0.5 - (t - 0.5) / 0.5);
+
     o_frag_color = vec4(palette(t, 
                                 vec3(0.5,0.5,0.5),
                                 vec3(0.5,0.5,0.5),
                                 vec3(1.0,1.0,1.0),
                                 vec3(0.0,0.33,0.67)), 
-                        1.0 - t);
+                        alpha_final);
 }
 `;
 
@@ -164,10 +166,9 @@ function main()
     var webgl_context = canvas_element.getContext("webgl2");
     if (webgl_context != null) 
     {
-        var state =
-            init(
+        var state = init(
             webgl_context,
-            2000, //particle count
+            500, //particle count
             0.2, //birth rate
             5.4, 10.6, //lifespan
             -Math.PI, Math.PI, ///angle
