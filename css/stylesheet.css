@@ -128,7 +128,7 @@ h3 a:hover {
     height: 100%;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .project-cards {
         flex-direction: column;
         justify-content: center;
