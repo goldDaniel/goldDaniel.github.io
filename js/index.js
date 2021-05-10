@@ -116,7 +116,7 @@ void main()
     v_life_current = i_life_current;
     v_life_max = i_life_max;
 
-    gl_PointSize = 8.0;
+    gl_PointSize = 2.0;
     gl_Position = vec4(i_position, 0.0, 1.0);
 }
 `;
@@ -143,10 +143,10 @@ void main()
     float alpha_final = t <= 0.5 ? (t / 0.5) : (1.0 - (t - 0.5) / 0.5);
 
     o_frag_color = vec4(palette(t, 
-                                vec3(0.5,0.5,0.5),
-                                vec3(0.5,0.5,0.5),
-                                vec3(1.0,1.0,1.0),
-                                vec3(0.0,0.33,0.67)), 
+                                vec3(0.8,0.5,0.4),
+                                vec3(0.2,0.4,0.2),
+                                vec3(2.0,1.0,1.0),
+                                vec3(0.0,0.25,0.25)), 
                         alpha_final);
 }
 `;
@@ -159,15 +159,13 @@ function main()
     canvas_element.width = window.innerWidth;
     canvas_element.height = window.innerHeight;
 
-    
-
     var webgl_context = canvas_element.getContext("webgl2");
     if (webgl_context != null) 
     {
         var state = init(
             webgl_context,
-            250, //particle count
-            100, //birth rate
+            2500, //particle count
+            0.5, //birth rate
             5.4, 10.6, //lifespan
             -Math.PI, Math.PI, ///angle
             0.1, 0.4, //speed
