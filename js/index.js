@@ -116,7 +116,7 @@ void main()
     v_life_current = i_life_current;
     v_life_max = i_life_max;
 
-    gl_PointSize = 4.0;
+    gl_PointSize = 8.0;
     gl_Position = vec4(i_position, 0.0, 1.0);
 }
 `;
@@ -140,7 +140,7 @@ void main()
 {
     float t = v_life_current / v_life_max;
 
-    float alpha_final = t < 0.5 ? (t / 0.5) : (0.5 - (t - 0.5) / 0.5);
+    float alpha_final = t <= 0.5 ? (t / 0.5) : (1.0 - (t - 0.5) / 0.5);
 
     o_frag_color = vec4(palette(t, 
                                 vec3(0.5,0.5,0.5),
@@ -167,7 +167,7 @@ function main()
         var state = init(
             webgl_context,
             250, //particle count
-            1, //birth rate
+            100, //birth rate
             5.4, 10.6, //lifespan
             -Math.PI, Math.PI, ///angle
             0.1, 0.4, //speed
@@ -455,14 +455,13 @@ function init(
         setupParticleBufferVAO(gl, vao_desc[i].buffers, vao_desc[i].vao);
     }
 
-    gl.clearColor(0.12, 0.12, 0.12, 1.0);
-
-
-
-    
+    gl.clearColor(0.12, 0.12, 0.12, 1.0);    
 
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    
+    gl.enable(gl.SAMPLE_COVERAGE);
+
 
     return {
         particle_sys_buffers: buffers,
