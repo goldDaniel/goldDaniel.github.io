@@ -594,6 +594,3 @@ function setupParticleBufferVAO(gl, buffers, vao)
     gl.bindVertexArray(null);
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
 }
-
-//leaks a ton of memory but whos gonna be resizing the window? 
-window.onresize = main
