@@ -164,7 +164,7 @@ function main()
     {
         var state = init(
             webgl_context,
-            2500, //particle count
+            1000, //particle count
             0.5, //birth rate
             5.4, 10.6, //lifespan
             -Math.PI, Math.PI, ///angle
