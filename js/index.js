@@ -151,10 +151,25 @@ void main()
 }
 `;
 
-
+function iOS() 
+{
+    return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
 
 function main() 
 {    
+    //IOS does not support webgl3 
+    if(iOS()) return;
+
     var canvas_element = document.getElementById("background-canvas");
     canvas_element.width = window.innerWidth;
     canvas_element.height = window.innerHeight;
