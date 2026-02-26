@@ -1,93 +1,357 @@
 <!doctype html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Portfolio">
-        <meta name="author" content="Daniel Gold">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Daniel Gold - Graphics Software Engineer</title>
 
-        <link rel="stylesheet" href="css/stylesheet.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="description" content="Daniel Gold - Graphics Software Engineer focused on performance optimization and engine-level rendering systems." />
 
-        <title>Daniel Gold - Software Developer</title>
-    </head>
+  <meta property="og:title" content="Daniel Gold - Graphics Software Engineer" />
+  <meta property="og:description" content="Performance optimization and engine-level rendering systems." />
+  <meta property="og:type" content="website" />
 
-    <body onload="main()">
-        <canvas id="background-canvas" class="background-canvas">
-            
-        </canvas>
-        <div class="personal-info">
-            <img class="profile-image" src="img/profile.jpg"></img>
-            <div class="titles">
-                <h1>Daniel Gold</h1>
-                <h2>Software Developer</h2>
-            </div>
-            <div class="online-presence">
-                <a href="https://github.com/goldDaniel" class="fa fa-github fa-2x"></a>
-                <a href="https://www.linkedin.com/in/daniel-gold-3a9384a4/" class="fa fa-linkedin fa-2x"></a>
-                <a href="https://www.youtube.com/user/vangradomor/videos" class="fa fa-youtube fa-2x"></a>
-                <a href="mailto:contact@golddaniel.ca"class="fa fa-envelope fa-2x"></a>
-            </div>
+  <link rel="stylesheet" href="css/site.css" />
+
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container hero">
+      <img
+        class="portrait"
+        src="img/profile.jpg"
+        width="144"
+        height="144"
+        alt="Portrait of Daniel Gold"
+        decoding="async"
+      />
+
+      <div class="hero-text">
+        <h1 class="name">Daniel Gold</h1>
+        <p class="title">Graphics Software Engineer</p>
+
+        <nav class="links" aria-label="Social links">
+          <a class="icon-link" href="https://www.linkedin.com/in/daniel-gold-3a9384a4/" rel="me" target="_blank">
+            <span class="icon" aria-hidden="true">
+              <!-- LinkedIn icon (inline SVG) -->
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 23.5h4V7.98h-4V23.5ZM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.09v9.37h-4v-8.3c0-1.98-.04-4.52-2.76-4.52-2.76 0-3.18 2.15-3.18 4.38v8.44H8V7.98Z"/>
+              </svg>
+            </span>
+            <span>LinkedIn</span>
+          </a>
+
+          <a class="icon-link" href="https://github.com/goldDaniel" rel="me" target="_blank">
+            <span class="icon" aria-hidden="true">
+              <!-- GitHub icon -->
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path d="M12 .5C5.73.5.75 5.62.75 12c0 5.1 3.21 9.42 7.67 10.95.56.1.76-.25.76-.55v-2.1c-3.12.7-3.78-1.37-3.78-1.37-.5-1.32-1.24-1.67-1.24-1.67-1.01-.71.08-.7.08-.7 1.12.08 1.7 1.17 1.7 1.17 1 .75 2.62.54 3.26.41.1-.74.39-1.24.7-1.52-2.49-.29-5.11-1.27-5.11-5.64 0-1.25.43-2.28 1.15-3.08-.12-.29-.5-1.46.11-3.05 0 0 .94-.31 3.08 1.18.9-.25 1.86-.38 2.81-.38.95 0 1.91.13 2.81.38 2.14-1.5 3.08-1.18 3.08-1.18.61 1.59.23 2.76.11 3.05.72.8 1.15 1.83 1.15 3.08 0 4.38-2.62 5.35-5.12 5.63.4.36.76 1.06.76 2.14v3.17c0 .3.2.65.77.54 4.46-1.53 7.67-5.85 7.67-10.95C23.25 5.62 18.27.5 12 .5Z"/>
+              </svg>
+            </span>
+            <span>GitHub</span>
+          </a>
+
+          <a class="icon-link" href="mailto:contact@golddaniel.ca">
+            <span class="icon" aria-hidden="true">
+              <!-- Mail icon -->
+              <svg viewBox="0 0 24 24" width="20" height="20" focusable="false">
+                <path d="M2.5 5.5h19c.55 0 1 .45 1 1v11c0 .55-.45 1-1 1h-19c-.55 0-1-.45-1-1v-11c0-.55.45-1 1-1Zm18 2.14-8.1 5.4c-.25.17-.58.17-.83 0L3.5 7.64V17.5h17V7.64Z"/>
+              </svg>
+            </span>
+            <span>Email</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section class="section">
+      <h2>Profile</h2>
+
+      <div class="prose">
+        <p>
+          Graphics Software Engineer focused on performance optimization and engine-level rendering systems. 
+          I build and debug Unity graphics for AAA games, and I'm experienced modifying engine source to fix bugs or extend core systems.
+          I like GPU-driven workflows, shader/compute development, measurable performance gains, and large memory savings.
+        </p>
+
+        <ul class="highlights">
+          <li><strong>Current:</strong> HB Studios (2K Sports) - Unity graphics for AAA titles</li>
+          <li><strong>Focus:</strong> performance, rendering systems, engine-level architecture</li>
+          <li><strong>Skills:</strong> Unity (HDRP), Unity Source modification, performance analysis, GPU-driven pipelines, shader/compute workflows, C#/C++</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>My Work</h2>
+
+        <div class="filters" role="group" aria-label="Project filters">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-filter="pro">Professional</button>
+          <!--No active personal projects-->
+          <button class="chip hide" type="button" data-filter="personal">Personal</button>
+          <button class="chip" type="button" data-filter="jam">Game Jams</button>
         </div>
-        <div class="projects-info">
-            <h2>A few of my projects</h2>
-            <div class="project-cards">
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/shape_shooter">Shape Shooter</a></h3>
-                    <video width="100%" controls>
-                        <source src="https://i.imgur.com/BQ8AiF4.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="https://github.com/goldDaniel/shape_shooter" class="fa fa-github fa-lg"></a>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/Procedural-Grass">Procedural Grass</a></h3>
-                    <video width="100%" controls>
-                        <source src="https://i.imgur.com/u31GkFW.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>        
-                    <a href="https://github.com/goldDaniel/Procedural-Grass" class="fa fa-github fa-lg"></a>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/Plug-N-Play">Shmup Game Engine</a></h3>
-                    <video width="100%" controls>
-                        <source src="https://i.imgur.com/RHH5CWR.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="https://github.com/goldDaniel/Plug-N-Play" class="fa fa-github fa-lg"></a>
-                </div>
-                
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/Game-Devlopment-Workshop">Gamedev Workshops</a></h3>
-                    <iframe class="embeded-video" src="https://www.youtube.com/embed/-u4utq9QTXg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://github.com/goldDaniel/Game-Devlopment-Workshop" class="fa fa-github fa-lg"></a>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/Dont-Stop-the-Beat">Don't Stop the Beat</a></h3>
-                    <video width="100%" controls>
-                        <source src="https://i.imgur.com/28GnmC1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="https://github.com/goldDaniel/Dont-Stop-the-Beat" class="fa fa-github fa-lg"></a>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/BerkleeJamTeam20">Hoppin Shoppin</a></h3>
-                    <iframe frameborder="0" src="https://itch.io/embed/815126" width="100%" height="auto"><a href="https://golddaniel.itch.io/hoppin-shoppin">Hoppin Shoppin by gold.daniel</a></iframe>
-                    <a href="https://github.com/goldDaniel/BerkleeJamTeam20" class="fa fa-github fa-lg"></a>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/goldDaniel/vita_pong">Playstation Vita Pong</a></h3>
-                    <iframe class="embeded-video" src="https://www.youtube.com/embed/qiYQqFO9qEo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <a href="https://github.com/goldDaniel/vita_pong" class="fa fa-github fa-lg"></a>
-                </div>
-          
-            </div>
-        </div>
-    </body>
+      </div>
 
-    <footer>
-        &copy; 2021 - Daniel Gold
+      <div class="grid">
+
+        <article class="card" data-tags="pro">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              class="card-media"
+              src="img/professional/pga2k25.webp"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">
+              PGA TOUR 2K25
+            </h3>
+            <p class="card-desc">
+              I've shipped major texture-system upgrades (multi-UV streaming, deferred uploads, partial cpu->gpu texture updates) delivering 400MB+ terrain memory savings, and designed compute-driven systems like flow-field atlasing that cut memory by 30x+. 
+              I also profile and debug rendering and gameplay bottlenecks across platforms, and have landed fixes in Unity that ship in current versions.
+            </p>
+            <ul class="meta">
+              <li>Tooling: Unity • C# • C++</li>
+              <li>Platforms: Windows • Xbox Series • PS5</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="pro">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/professional/minecraft_ps5.jpg"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Minecraft game cover"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">
+              Minecraft for PS5®
+            </h3>
+            <p class="card-desc">
+              On the PS5 port of <i>Minecraft</i>, I was one of two rendering programmers, contributing to the PS5 renderer and the native platform integration.
+              I extended the shader build pipeline with an optional step to extract and package shader binaries for embedding directly in the executable.
+              I also profiled CPU/GPU performance and memory usage of the AGC backend to guide targeted optimizations.
+            </p>
+            <ul class="meta">
+              <li>Tooling: C++ • Custom Engine</li>
+              <li>Platforms: PS5</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="pro">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/professional/minecraft_legends.jpg"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Minecraft Legends Cover Image"
+            />
+          </a>
+
+          <div class="card-body">
+            <h3 class="card-title">
+              Minecraft Legends
+            </h3>
+
+            <p class="card-desc">
+              My first professionally shipped game. On <i>Minecraft Legends</i>, I profiled CPU/GPU rendering across all shipping platforms and shipped graphics optimizations. I built a dynamic resolution system for low-end hardware that preserves native-resolution UI, implemented full-screen resolution selection with multi-monitor support, and handled rendering bug fixes and feature maintenance.
+            </p>
+
+            <ul class="meta">
+              <li>Tooling: C++ • Custom Engine</li>
+              <li>Platforms: Windows • PS5 • PS4 • Xbox One • Xbox Series</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="jam">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/jams/gobblingoblins.png"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Gobblin' Goblins</h3>
+            <p class="card-desc">
+              Developed for the 2026 Winnipeg Game Jam. Enter the Goblin Gobblin' contest and devour food faster than the competition to win!
+            </p>
+            <ul class="meta">
+              <li>72-hour jam • Unity • C#</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://golddaniel.itch.io/gobblin-goblins" target="_blank" rel="noopener">Play</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="jam">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/jams/soul_harvester.png"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Soul Harvester</h3>
+            <p class="card-desc">
+              A deckbuilding game based around the gods of death. Many different card effects that interact and chain together!
+            </p>
+            <ul class="meta">
+              <li>Ludum Dare 58 • 72-hour jam • Unity • C#</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://golddaniel.itch.io/soul-harvester" target="_blank" rel="noopener">Play</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="jam">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/jams/depths_of_madness.png"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Depths of Madness</h3>
+            <p class="card-desc">
+              A wave clearing game with lots of stats and interactions. As you gain madness you get powerful abilities but lose vision.
+            </p>
+            <ul class="meta">
+              <li>Ludum Dare 57 • 72-hour jam • Unity • C#</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://golddaniel.itch.io/depths-of-madness" target="_blank" rel="noopener">Play</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="jam">
+          <a class="card-media" target="_blank" rel="noopener">
+            <img
+              src="img/jams/necro_riot.png"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Necro Riot</h3>
+            <p class="card-desc">
+              Developed in 12 hours or so for Ludum Dare 55, was rated top 200 in fun! Goofy programmer art and sfx. Prove your worth to your demon girlfriends parents by making a blood sacrifices!
+            </p>
+            <ul class="meta">
+              <li>Ludum Dare 55 • 72-hour jam • Unity • C#</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://golddaniel.itch.io/necro-riot" target="_blank" rel="noopener">Play</a>
+            </div>
+          </div>
+        </article>
+<!--    Templates
+
+        <article class="card" data-tags="personal">
+          <a class="card-media" href="https://github.com/..." target="_blank" rel="noopener">
+            <img
+              src="img/projects/my-project.webp"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of My Project"
+            />
+          </a>
+
+          <div class="card-body">
+            <h3 class="card-title">
+              <a href="https://github.com/..." target="_blank" rel="noopener">My Project</a>
+            </h3>
+
+            <p class="card-desc">
+              1–2 sentences: what it is + what’s impressive technically.
+              Mention performance wins, GPU-driven approach, or tooling.
+            </p>
+
+            <ul class="meta">
+              <li>Unity • C#</li>
+              <li>Compute • GPU-driven</li>
+            </ul>
+
+            <div class="card-links">
+              <a href="https://github.com/..." target="_blank" rel="noopener">Repo</a>
+              <a href="https://..." target="_blank" rel="noopener">Video</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="jam">
+          <a class="card-media" href="https://..." target="_blank" rel="noopener">
+            <img
+              src="img/projects/jam-project.webp"
+              width="1200"
+              height="675"
+              loading="lazy"
+              decoding="async"
+              alt="Screenshot of a game jam project"
+            />
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="https://..." target="_blank" rel="noopener">Jam Game Title</a></h3>
+            <p class="card-desc">What you built in 48–72 hours and the most interesting technical hook.</p>
+            <ul class="meta">
+              <li>72-hour jam</li>
+              <li>2D • 10,000 entities</li>
+            </ul>
+            <div class="card-links">
+              <a href="https://..." target="_blank" rel="noopener">Play</a>
+              <a href="https://..." target="_blank" rel="noopener">Repo</a>
+            </div>
+          </div>
+        </article>
+      -->
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Daniel Gold</p>
     </footer>
-    <script src="js/index.js"></script>
+  </main>
+
+  <script src="js/site.js" defer></script>
+</body>
 </html>
