@@ -1,13 +1,13 @@
 /* ====== Base ====== */
 :root {
-  --bg: #0b0c0f;
-  --panel: #11131a;
+  --bg: #211721;
+  --panel: #2b273c;
   --text: #e9e9ee;
   --muted: #b6b7c2;
-  --border: rgba(255,255,255,0.10);
-  --shadow: 0 8px 30px rgba(0,0,0,0.35);
+  --border: rgba(255,255,255,0.20);
+  --shadow: 0 8px 0px rgba(0,0,0,0.35);
 
-  --radius: 16px;
+  --radius: 32px;
   --max: 980px;
 
   --space-1: 8px;
@@ -113,8 +113,14 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--border);
   background: color-mix(in oklab, var(--panel), var(--bg) 14%);
 }
-.icon-link:hover { text-decoration: none; }
-.icon svg { fill: currentColor; opacity: 0.9; }
+.icon-link:hover {
+  text-decoration: none;
+}
+
+.icon svg {
+  fill: currentColor;
+  opacity: 0.9;
+}
 
 .section {
   padding: var(--space-5) 0;
@@ -146,13 +152,6 @@ a:hover { text-decoration: underline; }
 }
 .highlights strong { color: var(--text); }
 
-/* ====== Filters ====== */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
 .chip {
   appearance: none;
   border: 1px solid var(--border);
@@ -163,6 +162,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   font: inherit;
 }
+
 .chip[aria-pressed="true"] {
   background: color-mix(in oklab, var(--panel), var(--text) 8%);
 }
